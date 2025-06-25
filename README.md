@@ -74,7 +74,6 @@ restful-booker-api-tests/
 - ✅ **Full CRUD**: Create → Read → Update → Delete operations
 - ✅ **Comprehensive Assertions**: Status codes, headers, response body
 - ✅ **CLI Script**: `npm test` command in package.json
-- ✅ **Clean Code**: Simple, readable, beginner-friendly structure
 
 ## 🔧 Configuration
 
@@ -96,13 +95,6 @@ Restful Booker API Tests
 
 5 passing (2s)
 ```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Run tests: `npm test`
-4. Create a Merge Request
 
 ---
 
