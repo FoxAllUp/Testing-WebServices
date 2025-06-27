@@ -36,6 +36,7 @@ npm test
 
 # 3. Run API tests using WebdriverIO (optional)
 npm run test:wdio
+```
 
 ## 🧪 Test Scenarios
 
@@ -67,11 +68,11 @@ Each test validates:
 
 restful-booker-api-tests/
 ├── tests/
-│ └── api.spec.js # Main test file with all 5 scenarios
-├── wdio.conf.js # WebdriverIO configuration
-├── package.json # Dependencies and npm scripts
-├── .gitignore # Git ignore rules
-└── README.md # This documentation
+│ └── api.spec.js          # Main test file with all 5 scenarios
+├── wdio.conf.js           # WebdriverIO configuration
+├── package.json           # Dependencies and npm scripts
+├── .gitignore             # Git ignore rules
+└── README.md              # This documentation
 
 ```
 
@@ -111,7 +112,7 @@ restful-booker-api-tests/
 Restful Booker API Tests
 ✓ should create a token
 ✓ should create a booking  
- ✓ should get booking by ID
+✓ should get booking by ID
 ✓ should update the booking
 ✓ should delete the booking
 
@@ -120,6 +121,8 @@ Restful Booker API Tests
 ```
 
 ### WDIO Test Output
+
+```
 
 [0-0] RUNNING in chrome - /tests/api.spec.js
 [0-0] ✓ should create a token
@@ -130,7 +133,8 @@ Restful Booker API Tests
 
 5 passing (2s)
 
+```
+
 ---
 
 **Note**: This is an educational project for learning API testing fundamentals with familiar JavaScript testing tools. Both Mocha and WebdriverIO are included to demonstrate flexibility in testing approaches.
-```
