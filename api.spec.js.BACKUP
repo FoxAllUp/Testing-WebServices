@@ -30,11 +30,17 @@ describe("Restful Booker API Tests", () => {
     additionalneeds: "Lunch",
   };
 
-  it("should create a token", async () => {
+  beforeEach(async function() {
     const response = await axios.post(`${baseURL}/auth`, {
       username: "admin",
-      password: "password123",
+      password: "password123"
     });
+    token = response.data.token;
+    expect(token).to.be.a('string');
+  });
+
+  it("should create a token", async () => {
+    console.log(token);
     expect(response.status).to.equal(200);
     expect(response.headers["content-type"]).to.include("application/json");
     expect(response.data).to.have.property("token");
