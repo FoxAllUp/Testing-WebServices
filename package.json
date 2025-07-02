@@ -4,8 +4,7 @@
   "description": "Automated API testing suite for the Restful Booker hotel booking system using Axios, WebdriverIO, Mocha, and Chai.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/api.spec.js",
-    "test:wdio": "wdio run wdio.conf.js"
+    "test": "mocha tests/api.spec.js"
   },
   "repository": {
     "type": "git",
@@ -16,15 +15,11 @@
   "dependencies": {
     "axios": "^1.10.0",
     "chai": "^5.2.0",
-    "mocha": "^11.7.1",
-    "wdio": "^6.0.1"
+    "mocha": "^11.7.1"
   },
   "devDependencies": {
-    "@wdio/cli": "^8.27.0",
-    "@wdio/local-runner": "^8.27.0",
     "@wdio/mocha-framework": "^8.27.0",
     "@wdio/spec-reporter": "^8.27.0",
-    "webdriverio": "^8.27.0",
     "axios": "^1.6.0",
     "chai": "^4.3.10"
   }
