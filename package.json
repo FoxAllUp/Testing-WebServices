@@ -4,7 +4,7 @@
   "description": "Automated API testing suite for the Restful Booker hotel booking system using Axios, WebdriverIO, Mocha, and Chai.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/**/*.test.js"
+    "test": "mocha tests/**/*.test.js --reporter mocha-junit-reporter --reporter-options mochaFile=reports/junit/test-results.xml"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "@wdio/mocha-framework": "^8.27.0",
     "@wdio/spec-reporter": "^8.27.0",
     "axios": "^1.6.0",
-    "chai": "^4.3.10"
+    "chai": "^4.3.10",
+    "mocha-junit-reporter": "^2.2.1"
   }
 }

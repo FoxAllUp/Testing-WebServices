@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="2.660" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-07-03T09:54:06" tests="0" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Auth API" timestamp="2025-07-03T09:54:06" tests="1" file="/Volumes/LaCie/adat/Projektek/EPAM-TAiJS/Testing-WebServices/Testing-WebServices/tests/auth.test.js" time="0.657" failures="0">
+    <testcase name="Auth API should create a token" time="0.000" classname="should create a token">
+    </testcase>
+  </testsuite>
+  <testsuite name="Booking API" timestamp="2025-07-03T09:54:06" tests="4" file="/Volumes/LaCie/adat/Projektek/EPAM-TAiJS/Testing-WebServices/Testing-WebServices/tests/booking.test.js" time="1.642" failures="0">
+    <testcase name="Booking API should create a booking" time="0.120" classname="should create a booking">
+    </testcase>
+    <testcase name="Booking API should get a booking by id" time="0.121" classname="should get a booking by id">
+    </testcase>
+    <testcase name="Booking API should update a booking" time="0.121" classname="should update a booking">
+    </testcase>
+    <testcase name="Booking API should delete a booking" time="0.240" classname="should delete a booking">
+    </testcase>
+  </testsuite>
+</testsuites>
