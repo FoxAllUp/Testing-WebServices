@@ -3,6 +3,9 @@ pipeline {
     environment {
         NODE_ENV = 'test'
     }
+    tools {
+        nodejs 'v23.7.0'
+    }
     stages {
         stage('Checkout') {
             steps {
