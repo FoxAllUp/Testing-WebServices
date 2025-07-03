@@ -4,6 +4,7 @@ pipeline {
         NODE_ENV = 'test'
     }
     tools {
+        git '2.24.3'
         nodejs 'v23.7.0'
     }
     stages {
@@ -14,7 +15,7 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'npm ci'
+                sh 'npm install'
             }
         }
         stage('Run Tests') {
