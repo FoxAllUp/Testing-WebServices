@@ -30,7 +30,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'npm run tests:all'
+                sh 'npm run test:all'
             }
         }
         stage('Archive Results') {
