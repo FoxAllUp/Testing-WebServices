@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="2.303" tests="5" failures="3">
-  <testsuite name="Root Suite" timestamp="2025-07-06T17:51:58" tests="0" time="0.000" failures="0">
+<testsuites name="Mocha Tests" time="2.159" tests="5" failures="3">
+  <testsuite name="Root Suite" timestamp="2025-07-06T17:53:03" tests="0" time="0.000" failures="0">
   </testsuite>
-  <testsuite name="Auth API" timestamp="2025-07-06T17:51:58" tests="1" file="/Volumes/LaCie/adat/Projektek/EPAM-TAiJS/Testing-WebServices/Testing-WebServices/tests/auth.test.js" time="0.698" failures="1">
+  <testsuite name="Auth API" timestamp="2025-07-06T17:53:03" tests="1" file="/Volumes/LaCie/adat/Projektek/EPAM-TAiJS/Testing-WebServices/Testing-WebServices/tests/auth.test.js" time="0.585" failures="1">
     <testcase name="Auth API should create a token" time="0.001" classname="should create a token">
       <failure message="expected undefined to be a string" type="AssertionError"><![CDATA[AssertionError: expected undefined to be a string
     at Context.<anonymous> (tests/auth.test.js:20:25)
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
     </testcase>
   </testsuite>
-  <testsuite name="Booking API" timestamp="2025-07-06T17:51:59" tests="4" file="/Volumes/LaCie/adat/Projektek/EPAM-TAiJS/Testing-WebServices/Testing-WebServices/tests/booking.test.js" time="1.556" failures="2">
-    <testcase name="Booking API should create a booking" time="0.122" classname="should create a booking">
+  <testsuite name="Booking API" timestamp="2025-07-06T17:53:04" tests="4" file="/Volumes/LaCie/adat/Projektek/EPAM-TAiJS/Testing-WebServices/Testing-WebServices/tests/booking.test.js" time="1.571" failures="2">
+    <testcase name="Booking API should create a booking" time="0.126" classname="should create a booking">
     </testcase>
-    <testcase name="Booking API should get a booking by id" time="0.123" classname="should get a booking by id">
+    <testcase name="Booking API should get a booking by id" time="0.125" classname="should get a booking by id">
     </testcase>
-    <testcase name="Booking API should update a booking" time="0.131" classname="should update a booking">
+    <testcase name="Booking API should update a booking" time="0.126" classname="should update a booking">
       <failure message="Request failed with status code 403" type="AxiosError"><![CDATA[AxiosError: Request failed with status code 403
     at settle (node_modules/axios/dist/node/axios.cjs:2053:12)
     at IncomingMessage.handleStreamEnd (node_modules/axios/dist/node/axios.cjs:3170:11)
@@ -25,7 +25,7 @@
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
     at async Context.<anonymous> (tests/booking.test.js:81:17)]]></failure>
     </testcase>
-    <testcase name="Booking API should delete a booking" time="0.124" classname="should delete a booking">
+    <testcase name="Booking API should delete a booking" time="0.127" classname="should delete a booking">
       <failure message="Request failed with status code 403" type="AxiosError"><![CDATA[AxiosError: Request failed with status code 403
     at settle (node_modules/axios/dist/node/axios.cjs:2053:12)
     at IncomingMessage.handleStreamEnd (node_modules/axios/dist/node/axios.cjs:3170:11)

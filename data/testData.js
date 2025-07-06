@@ -3,7 +3,7 @@ require("dotenv").config();
 module.exports = {
   credentials: {
     username: process.env.API_USERNAME,
-    password: process.env.API_PASSWORD,
+    password: process.env.API_PASSWORD
   },
   booking: {
     firstname: "John",
