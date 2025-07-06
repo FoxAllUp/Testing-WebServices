@@ -17,7 +17,7 @@ describe("Booking API", () => {
       throw error;
     }
 
-    await new Promise((resolve) => setTimeout(resolve, 10));
+    await new Promise((resolve) => setTimeout(resolve, 100));
 
     try {
       const createResponse = await axios.post(`${apiBase}/booking`, booking, {
