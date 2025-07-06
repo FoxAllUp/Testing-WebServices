@@ -3,6 +3,9 @@ pipeline {
     environment {
         NODE_ENV = 'test'
     }
+      triggers {
+        cron('H H/2 * * *')
+    }
     tools {
         git '2.24.3'
         nodejs 'v23.7.0'
