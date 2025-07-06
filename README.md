@@ -15,6 +15,9 @@ Automated API testing suite for the **Restful Booker** hotel booking system usin
 - **[Axios](https://axios-http.com/)** - HTTP client for API requests
 - **[Mocha](https://mochajs.org/)** - JavaScript test framework
 - **[Chai](https://www.chaijs.com/)** - Assertion library for readable tests
+- **[Mochawesome](https://github.com/adamgruber/mochawesome-report-generator)** - HTML reporter
+- **[JUnit](https://junit.org/)** - XML reporting
+- **[Dotenv](https://www.dotenv.org/)** - Environment variables loader
 - **Node.js** - Runtime environment
 
 ## 🚀 Quick Start
@@ -31,7 +34,7 @@ Automated API testing suite for the **Restful Booker** hotel booking system usin
 npm install
 
 # 2. Run API tests using Mocha
-npm test
+npm run test:all
 
 ```
 
@@ -47,8 +50,8 @@ The test suite covers a complete booking lifecycle with **5 test scenarios**:
 
 ### Test Data Used
 - **Guest**: John Doe → Jane Smith (after update)
-- **Dates**: 2024-01-01 to 2024-01-02 → 2024-02-01 to 2024-02-02
-- **Price**: $100 → $200
+- **Dates**: 2025-12-01 to 2025-12-05 → 2025-12-02 to 2025-12-06
+- **Price**: $150 → $200
 - **Extras**: Breakfast → Lunch
 
 ## ✅ Test Assertions
@@ -63,12 +66,16 @@ Each test validates:
 
 ```
 
-restful-booker-api-tests/
+testing-webservices/
+├── data/
+│ └── testData.js          # Used data for testing
 ├── tests/
-│ └── api.spec.js          # Main test file with all 5 scenarios
+│ └── auth.test.js         # Test file for authentication
+│ └── booking.test.js      # Test file for booking steps
 ├── package.json           # Dependencies and npm scripts
 ├── .gitignore             # Git ignore rules
 └── README.md              # This documentation
+
 
 ```
 
@@ -78,14 +85,14 @@ restful-booker-api-tests/
 - ✅ **Token Reuse**: Auth token created once, used in update/delete
 - ✅ **Full CRUD**: Create → Read → Update → Delete operations
 - ✅ **Comprehensive Assertions**: Status codes, headers, response body
-- ✅ **CLI Script**: `npm test` runs Mocha-based API tests.
+- ✅ **CLI Script**: `npm run test:all` runs Mocha-based API tests.
 
 ## 🔧 Configuration
 
 ### Mocha Configuration
 - Mocha is used for API testing with Axios and Chai.
 - Tests are located in the `tests/` directory.
-- Run tests with the command: `npm test`.
+- Run tests with the command: `npm run test:all`.
 
 ## 📋 Sample Test Output
 

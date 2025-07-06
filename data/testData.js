@@ -16,5 +16,16 @@ module.exports = {
     },
     additionalneeds: "Breakfast",
   },
+  bookingUpdate: {
+    firstname: "Jane",
+    lastname: "Smith",
+    totalprice: 200,
+    depositpaid: false,
+    bookingdates: {
+      checkin: "2025-12-02",
+      checkout: "2025-12-06",
+    },
+    additionalneeds: "Lunch",
+  },
   apiBase: "https://restful-booker.herokuapp.com",
 };

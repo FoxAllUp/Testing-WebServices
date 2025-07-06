@@ -1,6 +1,6 @@
 const axios = require("axios");
 const { expect } = require("chai");
-const { credentials, booking, apiBase } = require("../data/testData");
+const { credentials, booking, bookingUpdate, apiBase } = require("../data/testData.js");
 
 describe("Booking API", () => {
   let token;
@@ -69,18 +69,17 @@ describe("Booking API", () => {
     expect(res.headers["content-type"]).to.include("application/json");
     expect(res.data.firstname).to.equal(booking.firstname);
     expect(res.data.lastname).to.equal(booking.lastname);
+    expect(res.data.totalprice).to.equal(booking.totalprice);
+    expect(res.data.depositpaid).to.equal(booking.depositpaid);
+    expect(res.data.bookingdates.checkin).to.equal(booking.bookingdates.checkin);
+    expect(res.data.bookingdates.checkout).to.equal(booking.bookingdates.checkout);
+    expect(res.data.additionalneeds).to.equal(booking.additionalneeds);
   });
 
   it("should update a booking", async function () {
-    const updatedBooking = {
-      ...booking,
-      firstname: "UpdatedName",
-      lastname: `Test-${Date.now()}`,
-    };
-
     const res = await axios.put(
       `${apiBase}/booking/${bookingId}`,
-      updatedBooking,
+      bookingUpdate,
       {
         headers: {
           "Content-Type": "application/json",
@@ -92,8 +91,13 @@ describe("Booking API", () => {
 
     expect(res.status).to.equal(200);
     expect(res.headers["content-type"]).to.include("application/json");
-    expect(res.data.firstname).to.equal(updatedBooking.firstname);
-    expect(res.data.lastname).to.equal(updatedBooking.lastname);
+    expect(res.data.firstname).to.equal(bookingUpdate.firstname);
+    expect(res.data.lastname).to.equal(bookingUpdate.lastname);
+    expect(res.data.totalprice).to.equal(bookingUpdate.totalprice);
+    expect(res.data.depositpaid).to.equal(bookingUpdate.depositpaid);
+    expect(res.data.bookingdates.checkin).to.equal(bookingUpdate.bookingdates.checkin);
+    expect(res.data.bookingdates.checkout).to.equal(bookingUpdate.bookingdates.checkout);
+    expect(res.data.additionalneeds).to.equal(bookingUpdate.additionalneeds);
   });
 
   it("should delete a booking", async function () {
