@@ -30,7 +30,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'npm test'
+                sh 'npm run tests:all'
             }
         }
         stage('Archive Results') {
@@ -39,6 +39,14 @@ pipeline {
             }
             steps {
                 archiveArtifacts artifacts: 'reports/**/*.*', fingerprint: true
+                publishHTML([
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'reports/html',
+                    reportFiles: 'test-results.html',
+                    reportName: 'HTML Test Report'
+                ])
             }
         }
     }
