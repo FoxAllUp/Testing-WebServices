@@ -22,6 +22,7 @@
     "@wdio/spec-reporter": "^8.27.0",
     "axios": "^1.6.0",
     "chai": "^4.3.10",
+    "dotenv": "^17.0.1",
     "mocha-junit-reporter": "^2.2.1"
   }
 }

@@ -1,16 +1,18 @@
+require("dotenv").config();
+
 module.exports = {
   credentials: {
-    username: "admin",
-    password: "password123",
+    username: process.env.API_USERNAME,
+    password: process.env.API_PASSWORD,
   },
   booking: {
-    firstname: "Richard",
-    lastname: "Test",
+    firstname: "John",
+    lastname: "Doe",
     totalprice: 150,
     depositpaid: true,
     bookingdates: {
-      checkin: "2025-07-01",
-      checkout: "2025-07-05",
+      checkin: "2025-12-01",
+      checkout: "2025-12-05",
     },
     additionalneeds: "Breakfast",
   },
