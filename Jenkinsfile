@@ -2,6 +2,8 @@ pipeline {
     agent any
     environment {
         NODE_ENV = 'test'
+        API_USERNAME = credentials('API_USERNAME')
+        API_PASSWORD = credentials('API_PASSWORD')
     }
       triggers {
         cron('H H/2 * * *')
@@ -14,6 +16,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 checkout scm
+            }
+        }
+        stage('Prepare .env') {
+            steps {
+                writeFile file: '.env', text: """
+                API_USERNAME=${env.API_USERNAME}
+                API_PASSWORD=${env.API_PASSWORD}
+                """
             }
         }
         stage('Install Dependencies') {
