@@ -49,6 +49,7 @@ The test suite covers a complete booking lifecycle with **5 test scenarios**:
 5. **🗑️ Delete Booking** - Remove booking from system (requires authentication)
 
 ### Test Data Used
+
 - **Guest**: John Doe → Jane Smith (after update)
 - **Dates**: 2025-12-01 to 2025-12-05 → 2025-12-02 to 2025-12-06
 - **Price**: $150 → $200
@@ -57,6 +58,7 @@ The test suite covers a complete booking lifecycle with **5 test scenarios**:
 ## ✅ Test Assertions
 
 Each test validates:
+
 - **HTTP Status Codes** (200, 201, etc.)
 - **Response Headers** (Content-Type: application/json)
 - **Response Body Structure** (required fields present)
@@ -90,6 +92,7 @@ testing-webservices/
 ## 🔧 Configuration
 
 ### Mocha Configuration
+
 - Mocha is used for API testing with Axios and Chai.
 - Tests are located in the `tests/` directory.
 - Run tests with the command: `npm run test:all`.
@@ -102,7 +105,7 @@ testing-webservices/
 
 Restful Booker API Tests
 ✓ should create a token
-✓ should create a booking  
+✓ should create a booking
 ✓ should get booking by ID
 ✓ should update the booking
 ✓ should delete the booking
@@ -113,4 +116,4 @@ Restful Booker API Tests
 
 ---
 
-**Note**: This is an educational project for learning API testing fundamentals with familiar JavaScript testing tools. 
+**Note**: This is an educational project for learning API testing fundamentals with familiar JavaScript testing tools.

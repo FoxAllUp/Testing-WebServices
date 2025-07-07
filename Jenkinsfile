@@ -28,6 +28,20 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage('Code Quality Check') {
+            parallel {
+                stage('Prettier Check') {
+                    steps {
+                        sh 'npm run prettier'
+                    }
+                }
+                stage('ESLint Check') {
+                    steps {
+                        sh 'npm run lint'
+                    }
+                }
+            }
+        }
         stage('Run Tests') {
             steps {
                 sh 'npm run test:all'

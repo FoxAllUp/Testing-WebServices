@@ -1,8 +1,8 @@
-const axios = require("axios");
-const { expect } = require("chai");
-const { credentials, booking, bookingUpdate, apiBase } = require("../data/testData.js");
+const axios = require('axios');
+const { expect } = require('chai');
+const { credentials, booking, bookingUpdate, apiBase } = require('../data/testData.js');
 
-describe("Booking API", () => {
+describe('Booking API', () => {
   let token;
   let bookingId;
 
@@ -13,60 +13,50 @@ describe("Booking API", () => {
       const authResponse = await axios.post(`${apiBase}/auth`, credentials);
       token = authResponse.data.token;
     } catch (error) {
-      console.log("Auth Error:", error.response?.status, error.response?.data);
+      console.log('Auth Error:', error.response?.status, error.response?.data);
       throw error;
     }
 
-    await new Promise((resolve) => setTimeout(resolve, 100));
+    await new Promise(resolve => setTimeout(resolve, 100));
 
     try {
       const createResponse = await axios.post(`${apiBase}/booking`, booking, {
         headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
       });
       bookingId = createResponse.data.bookingid;
     } catch (error) {
-      console.log(
-        "Booking Creation Error:",
-        error.response?.status,
-        error.response?.data
-      );
+      console.log('Booking Creation Error:', error.response?.status, error.response?.data);
       throw error;
     }
   });
 
-  it("should create a booking", async function () {
+  it('should create a booking', async function () {
     const res = await axios.post(`${apiBase}/booking`, booking, {
       headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
     });
 
     expect(res.status).to.equal(200);
-    expect(res.headers["content-type"]).to.include("application/json");
-    expect(res.data).to.have.property("bookingid").that.is.a("number");
-    expect(res.data).to.have.nested.property(
-      "booking.firstname",
-      booking.firstname
-    );
-    expect(res.data).to.have.nested.property(
-      "booking.lastname",
-      booking.lastname
-    );
+    expect(res.headers['content-type']).to.include('application/json');
+    expect(res.data).to.have.property('bookingid').that.is.a('number');
+    expect(res.data).to.have.nested.property('booking.firstname', booking.firstname);
+    expect(res.data).to.have.nested.property('booking.lastname', booking.lastname);
   });
 
-  it("should get a booking by id", async function () {
+  it('should get a booking by id', async function () {
     const res = await axios.get(`${apiBase}/booking/${bookingId}`, {
       headers: {
-        Accept: "application/json",
+        Accept: 'application/json',
       },
     });
 
     expect(res.status).to.equal(200);
-    expect(res.headers["content-type"]).to.include("application/json");
+    expect(res.headers['content-type']).to.include('application/json');
     expect(res.data.firstname).to.equal(booking.firstname);
     expect(res.data.lastname).to.equal(booking.lastname);
     expect(res.data.totalprice).to.equal(booking.totalprice);
@@ -76,21 +66,17 @@ describe("Booking API", () => {
     expect(res.data.additionalneeds).to.equal(booking.additionalneeds);
   });
 
-  it("should update a booking", async function () {
-    const res = await axios.put(
-      `${apiBase}/booking/${bookingId}`,
-      bookingUpdate,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Cookie: `token=${token}`,
-        },
-      }
-    );
+  it('should update a booking', async function () {
+    const res = await axios.put(`${apiBase}/booking/${bookingId}`, bookingUpdate, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Cookie: `token=${token}`,
+      },
+    });
 
     expect(res.status).to.equal(200);
-    expect(res.headers["content-type"]).to.include("application/json");
+    expect(res.headers['content-type']).to.include('application/json');
     expect(res.data.firstname).to.equal(bookingUpdate.firstname);
     expect(res.data.lastname).to.equal(bookingUpdate.lastname);
     expect(res.data.totalprice).to.equal(bookingUpdate.totalprice);
@@ -100,7 +86,7 @@ describe("Booking API", () => {
     expect(res.data.additionalneeds).to.equal(bookingUpdate.additionalneeds);
   });
 
-  it("should delete a booking", async function () {
+  it('should delete a booking', async function () {
     const res = await axios.delete(`${apiBase}/booking/${bookingId}`, {
       headers: {
         Cookie: `token=${token}`,
@@ -111,13 +97,13 @@ describe("Booking API", () => {
 
     try {
       await axios.get(`${apiBase}/booking/${bookingId}`);
-      throw new Error("Booking should not exist");
+      throw new Error('Booking should not exist');
     } catch (err) {
       expect(err.response.status).to.equal(404);
     }
   });
 
   afterEach(async function () {
-    await new Promise((resolve) => setTimeout(resolve, 100));
+    await new Promise(resolve => setTimeout(resolve, 100));
   });
 });

@@ -12,6 +12,5 @@ node_modules/
 
 # Test reports
 reports/
-reports/junit
 *.html
 *.xml
